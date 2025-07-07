@@ -1,0 +1,22 @@
+1. user enters to blank input boxes and title bar
+2. user enters a song name and is shows song suggestions (think about searching through lyrics as well)
+3. user selects a song / enters the whole song name
+4. if song is available in a single script it is shown in text box 1 and script field is updated
+5. if multiple scripts are available user enters script name and sees available scripts in dropdown
+6. if the lyrics are present for the entered script the lyrics are show in the text box
+7. user can edit the lyrics or paste new lyrics
+8. by pressing image button user can add lyrics from an image
+9. user formats the lyrics as required (choose song level settings here)
+9. preview button updates the preview window
+10. user can add chords to a song without chords by pressing the chords button
+11. reset clears all changes to the file text if no file is present clear the textbox (show alert box)
+12. save saves the lyrics to the file
+13. after user is done user can click add song to add the song to the presentation
+14. on add song the search bar and text boxes are cleared
+
+- user can enter only lyrics with no name or language and press add it as a song, add song only if text box has text
+? what should add button do if user clicks on a song in the song list(song already present in song list) and then wants to add a song?
+- allow user to input text in textbox 1 or 2,
+	if only text box 1 then text will be centerd
+	if only text box 2 then two boxes will be created and 1st one will be blank
+- chords will be taken ONLY from text box 1 (but chords can be added to text box 2??)

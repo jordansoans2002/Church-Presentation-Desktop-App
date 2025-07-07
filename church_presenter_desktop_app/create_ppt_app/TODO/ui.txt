@@ -1,0 +1,3 @@
+- remove preview button and make preview live
+- use icons rather than text in buttons
+!! set song details to be of the same size, clip the extra text

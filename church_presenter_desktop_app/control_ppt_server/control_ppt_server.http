@@ -1,0 +1,22 @@
+@control_ppt_server_HostAddress = http://localhost:5000
+
+
+GET {{control_ppt_server_HostAddress}}/api/Slideshow/get-slideshows
+Accept: application/json
+###
+
+POST {{control_ppt_server_HostAddress}}/api/Slideshow/change-slide
+Accept: application/json
+Content-Type: application/json
+{
+  "presentationIds": [
+    "gEZ0E7txzaHnJ7-07YYpow=="
+  ],
+  "slideChange": 2,
+  "options": {
+    "currentSlidePreview": false,
+    "nextSlidePreview": false,
+    "previousSlidePreview": false
+  }
+}
+###

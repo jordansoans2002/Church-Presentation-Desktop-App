@@ -1,0 +1,13 @@
+- use a mono spaced font to display text in the input text boxes
+	should help with assigning chords to lyrics
+- chords button add a blank line above each line with same length 
+- image button allows users to input image (enter path into alert box, paste, drag drop whichever works)
+	ocr is done on the image and text is displayed in the box
+
+- when user modifies text in an input box update the modified flag, 
+	if users presses reset reload file text into input text box, modified flag is reset
+
+- option can highlight the separator symbol wherever it appears in the text
+	used to indicate where the lines will be split into slides
+	can also hightlight the texts in different slides in different colors (slide 1-green, 2-blue etc)
+	hightlight very lightly only on hover maybe

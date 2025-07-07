@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="create_ppt_app.View.SongLyrics"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:create_ppt_app.View"
+             xmlns:components="clr-namespace:create_ppt_app.View.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="550">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30px" />
+            <RowDefinition />
+            <RowDefinition Height="32px" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="2" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <GridSplitter Grid.Column="1" Grid.RowSpan="212" HorizontalAlignment="Stretch"/>
+
+        <components:Dropdown Grid.Row="0" FontSize="14" IsEditable="True"
+                        Text="{Binding Lang1, Mode=OneWay}" ItemsSource="{Binding LanguageSuggestions}"
+                        OnOptionSelected="{Binding OnLang1Selected}"/>
+        <components:Dropdown Grid.Row="0" Grid.Column="2" FontSize="14" IsEditable="True"
+                        Text="{Binding Lang2, Mode=OneWay}" ItemsSource="{Binding LanguageSuggestions}"
+                        OnOptionSelected="{Binding OnLang2Selected}"/>
+
+        <TextBox Grid.Row="1"
+            Name="textbox1" FontSize="14"
+            TextWrapping="Wrap" AcceptsReturn="True" 
+            VerticalScrollBarVisibility="Auto" ScrollViewer.ScrollChanged="ScrollChanged"
+            Text="{Binding Text1, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Grid.Row="1" Grid.Column="2"
+            Name="textbox2" FontSize="14"
+            TextWrapping="Wrap" AcceptsReturn="True" 
+            VerticalScrollBarVisibility="Auto" ScrollViewer.ScrollChanged="ScrollChanged"
+            Text="{Binding Text2, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <components:LyricsControls Grid.Row="2"/>
+        <components:LyricsControls Grid.Row="2" Grid.Column="2"/>
+        
+
+    </Grid>
+</UserControl>

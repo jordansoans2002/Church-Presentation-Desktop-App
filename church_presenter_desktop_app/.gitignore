@@ -1,0 +1,48 @@
+# Visual Studio Code settings
+.vscode/
+.vs/
+
+# Build artifacts
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.log
+*.cache
+*.csproj.user
+
+# NuGet Packages
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+
+# ASP.NET Specific
+appsettings*.json
+secrets.json
+wwwroot/
+
+# Entity Framework Migrations
+Migrations/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.cache
+*.sln.ide
+
+# Resharper, Rider & JetBrains
+*.DotSettings.user
+.idea/
+*.sln.iml
+
+# Rider settings
+/.idea/
+*.ipr
+*.iws
+
+# macOS files
+.DS_Store
+._*

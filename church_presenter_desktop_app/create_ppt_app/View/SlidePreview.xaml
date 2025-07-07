@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="create_ppt_app.View.SlidePreview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:create_ppt_app.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="540" d:DesignWidth="960">
+    <Border BorderBrush="DarkGray" BorderThickness="4" Margin="10" CornerRadius="5" Padding="5">
+        <Grid Width="{Binding ApplicationSettings.Width}" Height="{Binding ApplicationSettings.Height}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*" />
+                <RowDefinition Height="0.5*" />
+            </Grid.RowDefinitions>
+            
+
+            <TextBlock 
+                       Grid.RowSpan="{Binding SongSettings.RowSpan}" Grid.ColumnSpan="{Binding SongSettings.ColSpan}" Margin="{Binding SongSettings.Margin1}"
+                       FontSize="{Binding SongSettings.Text1FontSize}" FontFamily="{Binding SongSettings.Text1FontName}" TextWrapping="Wrap"
+                       Foreground="{Binding SongSettings.PreviewText1FontColor}" Background="{Binding SongSettings.PreviewText2BackgroundColor}"
+                       Text="{Binding Text1}" />
+            <TextBlock Grid.Row="{Binding SongSettings.Row2}" Grid.Column="{Binding SongSettings.Col2}"
+                       Grid.RowSpan="{Binding SongSettings.RowSpan}" Grid.ColumnSpan="{Binding SongSettings.ColSpan}" Margin="{Binding SongSettings.Margin2}"
+                       FontSize="{Binding SongSettings.Text2FontSize}" FontFamily="{Binding SongSettings.Text2FontName}" TextWrapping="Wrap"
+                       Foreground="{Binding SongSettings.PreviewText2FontColor}" Background="{Binding SongSettings.PreviewText2BackgroundColor}"
+                       Text="{Binding Text2}" />
+
+        </Grid>
+    </Border>
+</UserControl>

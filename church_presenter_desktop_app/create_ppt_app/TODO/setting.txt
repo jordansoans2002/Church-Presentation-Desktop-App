@@ -1,0 +1,40 @@
+Presentation settings
+- Title font size -> int
+- Title font color -> hex string > color picker in hex/few names
+- Title font style -> string > combobox with suggestions
+- Title background color -> hex string > color picker in hex/few names
+- Title background image -> string > file picker
+- Lyrics font size -> int
+- Lyrics font style -> string > combobox with suggestions
+- Lyrics language 1 font color -> hex string > color picker in hex/few names
+- Lyrics language 2 font color -> hex string > color picker in hex/few names
+- Lyrics background color -> hex string > color picker in hex/few names
+- Lyrics background image -> string, file picker
+- Slide ratio -> enum(16:19,4:3)
+
+Song settings
+- Lyrics font size -> int
+- Lyrics font style -> string > combobox with suggestions
+- Lyrics language 1 font color -> hex string > color picker in hex/few names
+- Lyrics language 2 font color -> hex string > color picker in hex/few names
+
+- orientation -> enum? > dropdown
+- margin left -> int > range
+- margin top -> int > range
+- margin right -> int > range
+- margin bottom -> int > range
+
+- stanzas -> string 
+
+- separate slide -> enum? > dropdown (by symbol, by line)
+- separate slides by symbol -> string, combobox  with suggestions > single blank line, double blank line
+- lines per slide -> int(>0)
+
+
+Applications settings
+public LyricsSource LyricsSource { get; set; }
+public string AccountName { get; set; }
+public string AccountEmail { get; set; }
+public string LyricsFolderId { get; set; } = "1qVfC3niMEr8E4iVxSElikAlBP8G1RXWw";
+public string LyricsFolderName { get; set; } = "Song Lyrics";
+public bool EditingEnabled { get; set; }

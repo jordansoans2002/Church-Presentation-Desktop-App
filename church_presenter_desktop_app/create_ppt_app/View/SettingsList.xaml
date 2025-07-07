@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="create_ppt_app.View.SettingsList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:create_ppt_app.View" 
+             xmlns:components="clr-namespace:create_ppt_app.View.Components"
+             xmlns:utils="clr-namespace:create_ppt_app.utils"
+             xmlns:vm="clr-namespace:create_ppt_app.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="200">
+
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="TextTemplate">
+            <components:TextInput Text="{Binding SettingValue, Mode=TwoWay}" ValidateInput="{Binding Validation}" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="DropdownTemplate">
+            <components:Dropdown ItemsSource="{Binding DropdownOptions}" SelectedItem="{Binding DisplayValue, Mode=TwoWay}" IsEditable="False" />
+        </DataTemplate>
+        
+        <DataTemplate x:Key="TextInputDropdownTemplate">
+            <components:Dropdown ItemsSource="{Binding DropdownOptions}" SelectedItem="{Binding SettingValue}" IsEditable="True" IsReadOnly="True" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="ColorPickerTemplate">
+            <components:Dropdown ItemsSource="{Binding Options}" SelectedItem="{Binding SettingValue}" IsEditable="True" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="PickerTemplate">
+            <components:Picker SettingValue="{Binding SettingValue}" Command="{Binding PickerCommand}" />
+        </DataTemplate>
+        <Style TargetType="ListView">
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <!-- Main Content -->
+        <Grid.ColumnDefinitions>
+            <!-- Left column width is bound to ViewModel -->
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="2"/>
+            <ColumnDefinition Width="0.5*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Settings List -->
+        <ListView Name="settingNames"  ItemsSource="{Binding SettingsList}" DisplayMemberPath="SettingName"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.ScrollChanged="ScrollChanged"
+                   ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Focusable" Value="False"/>
+                    <Setter Property="IsHitTestVisible" Value="False"/>
+                    <Setter Property="Height" Value="30"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center" />
+                    <Setter Property="BorderThickness" Value="0.1" />
+                    <Setter Property="BorderBrush" Value="DarkSlateGray" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+        <!-- GridSplitter -->
+        <GridSplitter Grid.Column="1" Background="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <!-- Settings Values -->
+        <ListView Name="settingValues" Grid.Column="2" 
+                    ItemsSource="{Binding SettingsList}" ScrollViewer.ScrollChanged="ScrollChanged"
+                    ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+            <ListView.ItemTemplateSelector>
+                <utils:SettingTemplateSelector 
+                    TextTemplate="{StaticResource TextTemplate}"
+                    DropdownTemplate="{StaticResource DropdownTemplate}"
+                    ColorPickerTemplate="{StaticResource ColorPickerTemplate}"
+                    PickerTemplate="{StaticResource PickerTemplate}"/>
+            </ListView.ItemTemplateSelector>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Height" Value="30"/>
+                    <Setter Property="Padding" Value="0" />
+                    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    <Setter Property="BorderThickness" Value="0.1" />
+                    <Setter Property="BorderBrush" Value="DarkSlateGray" />
+                </Style>
+            </ListView.ItemContainerStyle>
+
+        </ListView>
+    </Grid>
+</UserControl>

@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="create_ppt_app.View.Components.Dropdown"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:create_ppt_app.View.Components"
+             x:Name="root"
+             mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="100">
+
+    <ComboBox x:Name="TitleInput" 
+    VerticalContentAlignment="Center" HorizontalContentAlignment="Stretch"  BorderThickness="2"
+    IsEditable="{Binding IsEditable, ElementName=root}" StaysOpenOnEdit="True" IsTextSearchEnabled="False"
+    ItemsSource="{Binding ItemsSource, ElementName=root}" SelectedItem="{Binding SelectedItem, ElementName=root}"
+    Text = "{Binding Text, Mode=OneWay, ElementName=root}" GotFocus="GotFocus" 
+    DropDownOpened="DropdownInput_DropDownOpened" KeyDown="DropdownInput_KeyDown" KeyUp="DropdownInput_KeyUp"
+    SelectionChanged="DropdownInput_SelectionChanged" DataObject.Pasting="DropdownInput_Paste">
+        <ComboBox.ItemContainerStyle>
+            <Style TargetType="ComboBoxItem">
+                <EventSetter Event="PreviewMouseDown" Handler="DropdownInputItem_PreviewMouseDown" />
+            </Style>
+        </ComboBox.ItemContainerStyle>
+    </ComboBox>
+</UserControl>
