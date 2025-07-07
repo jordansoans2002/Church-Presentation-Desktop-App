@@ -10,8 +10,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "control_ppt_server", "control_ppt_server\control_ppt_server.csproj", "{3BB76AED-C683-4DEE-80AC-B4EACB4B89CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "create_ppt_app", "create_ppt_app\create_ppt_app.csproj", "{F52BCE47-0876-4D82-B192-4A298DB50B93}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{6989ABDE-4797-4D35-8012-53A66C41A5B4}"
 EndProject
 Global
@@ -24,10 +22,6 @@ Global
 		{3BB76AED-C683-4DEE-80AC-B4EACB4B89CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BB76AED-C683-4DEE-80AC-B4EACB4B89CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BB76AED-C683-4DEE-80AC-B4EACB4B89CF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F52BCE47-0876-4D82-B192-4A298DB50B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F52BCE47-0876-4D82-B192-4A298DB50B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F52BCE47-0876-4D82-B192-4A298DB50B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F52BCE47-0876-4D82-B192-4A298DB50B93}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6989ABDE-4797-4D35-8012-53A66C41A5B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6989ABDE-4797-4D35-8012-53A66C41A5B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6989ABDE-4797-4D35-8012-53A66C41A5B4}.Release|Any CPU.ActiveCfg = Release|Any CPU

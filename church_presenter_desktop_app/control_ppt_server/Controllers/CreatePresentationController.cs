@@ -1,5 +1,4 @@
 ﻿using Common.Models.Requests;
-using control_ppt_server.Models.Requests;
 using control_ppt_server.Services;
 using control_ppt_server.utils;
 using DocumentFormat.OpenXml.Office2016.Excel;
@@ -11,11 +10,11 @@ namespace control_ppt_server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PresentationController: ControllerBase
+    public class CreatePresentationController: ControllerBase
     {
 
         private readonly ICreatePresentationService _createService;
-        public PresentationController(ICreatePresentationService createService)
+        public CreatePresentationController(ICreatePresentationService createService)
         {
             _createService = createService;
         }

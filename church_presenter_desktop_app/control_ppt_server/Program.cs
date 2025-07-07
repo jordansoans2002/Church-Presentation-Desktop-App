@@ -8,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
-builder.Services.AddSingleton<ISlideshowControlService, SlideshowControllerService>();
 builder.Services.AddSingleton<ICreatePresentationService, CreatePresentationService>();
 
 
@@ -26,23 +25,6 @@ if (true && app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
-
-// TODO allow user to set an access code
-// mobile app should send access code with each request
-app.Use(async (context, next) =>
-{
-    // TODO store access granted status by user
-    bool isControlAccessPermitted = true;
-    if (isControlAccessPermitted)
-        await next.Invoke();
-    else
-    {
-        context.Response.StatusCode = (int)HttpStatusCode.Forbidden;
-        context.Response.ContentType = "text/plain";
-        await context.Response.WriteAsync("Control permission denied");
-        return;
-    }
-});
 app.MapControllers();
 
 app.Urls.Add("http://0.0.0.0:8080");
