@@ -53,6 +53,8 @@ namespace create_ppt_app.Command
             using var httpClient = new HttpClient();
             try
             {
+                // make primary call to remote server
+                // if remote server is unreachable (5xx) error fallback to local
                 var response = await httpClient.PostAsync("http://127.0.0.1:8080/api/Presentation/create-presentation", content);
 
                 Debug.WriteLine(response.StatusCode.ToString());
