@@ -6,10 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Shapes;
 
-namespace create_ppt_app.utils
+namespace Common
 {
     public class SongSeparator
     {
@@ -20,18 +18,18 @@ namespace create_ppt_app.utils
                 return slides;
             using (StringReader reader = new StringReader(lyrics))
             {
-                string? line;
+                string line;
                 int k = 0;
                 while ((line = reader.ReadLine()) != null)
                 {
                     if (string.IsNullOrWhiteSpace(line))
                         continue;
-                    if (k==0 || k == linesPerSlide)
+                    if (k == 0 || k == linesPerSlide)
                     {
                         slides.Add(line);
-                        k=1;
+                        k = 1;
                     }
-                    else if(k < linesPerSlide)
+                    else if (k < linesPerSlide)
                     {
                         slides[slides.Count - 1] += "\r\n" + line;
                         k++;
