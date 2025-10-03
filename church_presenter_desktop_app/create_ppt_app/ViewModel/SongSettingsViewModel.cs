@@ -83,14 +83,14 @@ namespace create_ppt_app.ViewModel
         {
             get
             {
-                return (settings["orientation"].SettingValue == Model.Orientation.Horizontal.ToString()) ? 0 : 1;
+                return (settings["orientation"].SettingValue == Model.Orientation.SideBySide.ToString()) ? 0 : 1;
             }
         }
         public int Col2
         {
             get
             {
-                return (settings["orientation"].SettingValue == Model.Orientation.Horizontal.ToString()) ? 1 : 0;
+                return (settings["orientation"].SettingValue == Model.Orientation.SideBySide.ToString()) ? 1 : 0;
             }
         }
 
@@ -98,14 +98,14 @@ namespace create_ppt_app.ViewModel
         {
             get
             {
-                return (settings["orientation"].SettingValue == Model.Orientation.Horizontal.ToString()) ? 2 : 1;
+                return (settings["orientation"].SettingValue == Model.Orientation.SideBySide.ToString()) ? 2 : 1;
             }
         }
         public int ColSpan
         {
             get
             {
-                return (settings["orientation"].SettingValue == Model.Orientation.Horizontal.ToString()) ? 1 : 2;
+                return (settings["orientation"].SettingValue == Model.Orientation.SideBySide.ToString()) ? 1 : 2;
             }
         }
 
@@ -151,7 +151,10 @@ namespace create_ppt_app.ViewModel
         {
             get { return settings["text1BackgroundColor"].SettingValue; }
         }
-        public Brush PreviewText1BackgroundColor => (Brush)new BrushConverter().ConvertFromString(Text1BackgroundColor)!;
+        public Brush PreviewText1BackgroundColor
+        {
+            get { return (Brush)new BrushConverter().ConvertFromString(Text1BackgroundColor)!; }
+        }
 
         private SettingViewModel text2BackgroundColor =
             new SettingViewModel(new Setting("Text 2 background", "White", SettingType.ColorPicker));
@@ -159,7 +162,10 @@ namespace create_ppt_app.ViewModel
         {
             get { return text2BackgroundColor.SettingValue; }
         }
-        public Brush PreviewText2BackgroundColor => (Brush)new BrushConverter().ConvertFromString(text2BackgroundColor.SettingValue)!;
+        public Brush PreviewText2BackgroundColor
+        {
+            get { return (Brush)new BrushConverter().ConvertFromString("Green")!; }
+        }
 
         public event EventHandler? SettingChanged;
 

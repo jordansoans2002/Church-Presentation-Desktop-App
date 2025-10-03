@@ -50,7 +50,7 @@ namespace control_ppt_server.utils
         }
 
 
-        private static SlidePart _createSlidePart(PresentationPart presentationPart)
+        public static SlidePart _createSlidePart(PresentationPart presentationPart)
         {
             SlidePart slidePart1 = presentationPart.AddNewPart<SlidePart>("rId2");
             slidePart1.Slide = new Slide(
@@ -75,7 +75,7 @@ namespace control_ppt_server.utils
             return slidePart1;
         }
 
-        private static SlideLayoutPart _createSlideLayoutPart(SlidePart slidePart1)
+        public static SlideLayoutPart _createSlideLayoutPart(SlidePart slidePart1)
         {
             SlideLayoutPart slideLayoutPart1 = slidePart1.AddNewPart<SlideLayoutPart>("rId1");
             SlideLayout slideLayout = new SlideLayout(
@@ -100,7 +100,7 @@ namespace control_ppt_server.utils
             return slideLayoutPart1;
         }
 
-        private static SlideMasterPart _createSlideMasterPart(SlideLayoutPart slideLayoutPart1)
+        public static SlideMasterPart _createSlideMasterPart(SlideLayoutPart slideLayoutPart1)
         {
             SlideMasterPart slideMasterPart1 = slideLayoutPart1.AddNewPart<SlideMasterPart>("rId1");
             SlideMaster slideMaster = new SlideMaster(
@@ -128,7 +128,7 @@ namespace control_ppt_server.utils
             return slideMasterPart1;
         }
 
-        private static ThemePart _createTheme(SlideMasterPart slideMasterPart1)
+        public static ThemePart _createTheme(SlideMasterPart slideMasterPart1)
         {
             ThemePart themePart1 = slideMasterPart1.AddNewPart<ThemePart>("rId5");
             D.Theme theme1 = new D.Theme() { Name = "Office Theme" };

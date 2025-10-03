@@ -21,7 +21,7 @@
             <TextBlock 
                        Grid.RowSpan="{Binding SongSettings.RowSpan}" Grid.ColumnSpan="{Binding SongSettings.ColSpan}" Margin="{Binding SongSettings.Margin1}"
                        FontSize="{Binding SongSettings.Text1FontSize}" FontFamily="{Binding SongSettings.Text1FontName}" TextWrapping="Wrap"
-                       Foreground="{Binding SongSettings.PreviewText1FontColor}" Background="{Binding SongSettings.PreviewText2BackgroundColor}"
+                       Foreground="{Binding SongSettings.PreviewText1FontColor}" Background="{Binding SongSettings.PreviewText1BackgroundColor}"
                        Text="{Binding Text1}" />
             <TextBlock Grid.Row="{Binding SongSettings.Row2}" Grid.Column="{Binding SongSettings.Col2}"
                        Grid.RowSpan="{Binding SongSettings.RowSpan}" Grid.ColumnSpan="{Binding SongSettings.ColSpan}" Margin="{Binding SongSettings.Margin2}"

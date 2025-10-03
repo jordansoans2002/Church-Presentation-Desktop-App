@@ -2,8 +2,10 @@
 using control_ppt_server.Models.Requests;
 using control_ppt_server.Services;
 using control_ppt_server.utils;
+using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Office2016.Excel;
 using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Presentation;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -28,20 +30,15 @@ namespace control_ppt_server.Controllers
             {
                 var tempFilePath = Path.GetTempFileName() + ".pptx";
 
-                // Create presentation using your existing utility
-                using (var presentationDocument = PowerPointUtils.CreatePresentation(tempFilePath))
+                using (PresentationDocument presentationDoc = PresentationDocument.Create(tempFilePath, PresentationDocumentType.Presentation))
                 {
-                    // Add slides for each song
-                    foreach (var song in req.Songs)
-                    {
-                        var titleText = song.Title;
-                        SlideHelper.AddSlideWithTextBox(presentationDocument, titleText, song.Text2);
-                    }
-
-                    presentationDocument.PresentationPart?.Presentation.Save();
+                    PresentationPart presentationPart = presentationDoc.AddPresentationPart();
+                    presentationPart.Presentation = new Presentation();
+                    HelloPresentation.CreatePresentationParts(presentationPart);
+                    //HelloPresentation.AddSlide(doc.PresentationPart);
+                    presentationPart.Presentation.Save();
                 }
 
-                // Return the file
                 var fileBytes = System.IO.File.ReadAllBytes(tempFilePath);
                 System.IO.File.Delete(tempFilePath); // Clean up
 

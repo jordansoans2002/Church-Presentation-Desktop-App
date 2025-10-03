@@ -13,7 +13,7 @@ namespace create_ppt_app.Model
         public string SlideSeparatorSymbol { get; set; } = "\n\n";
         public string Stanzas { get; set; } = "all";
         
-        public Orientation Orientation { get; set; } = Orientation.Horizontal;
+        public Orientation Orientation { get; set; } = Orientation.SideBySide;
         public int MarginStart { get; set; } = 12;
         public int MarginTop { get; set; } = 12;
         public int MarginEnd { get; set; } = 0;
@@ -35,8 +35,8 @@ namespace create_ppt_app.Model
 
     public enum Orientation
     {
-        Horizontal,
-        Vertical
+        SideBySide,
+        Stacked
     }
     public enum SlideSeparation
     {
